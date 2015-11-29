@@ -16,11 +16,5 @@ namespace DhWeb.Controllers
         {
             return View(model);
         }
-
-        //[Authorize]
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
     }
 }
