@@ -26,8 +26,7 @@ namespace DhWeb.Controllers
         [HttpPost]
         public ActionResult UploadFile(SiteOptions model)
         {
-            //foreach (string file in Request.Files)
-            //{
+
                 HttpPostedFileBase postedFile = Request.Files[0] as HttpPostedFileBase;
                 string baseUrl = "/Content/Uploaded/";
                 if (postedFile.ContentLength > 0)
@@ -57,11 +56,6 @@ namespace DhWeb.Controllers
                     return Content("Invalid File"); 
                 }
 
-
-        
-
-            
-          //  }
             return View();
         }
         // GET: SiteOptions/Details/5
@@ -88,19 +82,19 @@ namespace DhWeb.Controllers
         // POST: SiteOptions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ImageUrl")] SiteOptions siteOptions)
-        {
-            if (ModelState.IsValid)
-            {
-                db.SiteOptions.Add(siteOptions);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "Id,ImageUrl")] SiteOptions siteOptions)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.SiteOptions.Add(siteOptions);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(siteOptions);
-        }
+        //    return View(siteOptions);
+        //}
 
         // GET: SiteOptions/Edit/5
         public ActionResult Edit(int? id)

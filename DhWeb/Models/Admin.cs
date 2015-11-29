@@ -11,13 +11,11 @@ namespace DhWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
-
+    
     public partial class Admin
     {
         public int Id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string presentationtext { get; set; }
     }
 }

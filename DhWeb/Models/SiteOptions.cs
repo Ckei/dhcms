@@ -11,11 +11,11 @@ namespace DhWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
-
-    public partial class SiteOptions : DbContext
+    
+    public partial class SiteOptions
     {
         public int Id { get; set; }
         public string ImageUrl { get; set; }
+        public string mainPresentationText { get; set; }
     }
 }

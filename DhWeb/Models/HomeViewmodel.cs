@@ -16,17 +16,21 @@ namespace DhWeb.Models
 
         public HomeViewmodel()
         {
-            SiteOptions so = db.SiteOptions.Find(getLatestImage());
-            mainImageUrl =so.ImageUrl;
+            SiteOptions so = db.SiteOptions.Find(getLatestEntryId());
+            
+            mainImageUrl = so.ImageUrl;
+            presentationText = so.mainPresentationText;
 
         }
 
-        private int getLatestImage()
+        private int getLatestEntryId()
         {
             var lastEntry = db.SiteOptions.OrderByDescending(o => o.Id).First().Id;
             int ID = Convert.ToInt32(lastEntry);
             return ID ;
         }
+
+      
     }
 
 
